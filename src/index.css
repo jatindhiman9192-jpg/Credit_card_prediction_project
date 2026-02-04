@@ -1,0 +1,218 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Base styles adapted for dark theme */
+.app-wrapper {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, system-ui, sans-serif;
+  background-color: #1e1e3f; /* Dark background from original JS */
+  color: #ffffff; /* White text */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Form elements */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333; /* Darker border */
+  border-radius: 1rem;
+  background: #2b2b4f; /* Dark input bg from original JS */
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  color: #ffffff; /* White text */
+  box-sizing: border-box; /* Added for correct padding */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.input-field[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.input-field[type="number"]::-webkit-outer-spin-button,
+.input-field[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field::placeholder {
+  color: #777; /* Lighter placeholder for dark bg */
+  opacity: 0.7;
+}
+
+/* Currency symbol */
+.input-group {
+    position: relative;
+}
+.rupee-symbol {
+  position: absolute;
+  left: 12px;
+  /* Aligned with input padding + border */
+  top: 42px; /* Positioned relative to label */
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.has-currency {
+  padding-left: 2rem;
+}
+
+/* Labels */
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #aaa; /* Light grey for dark bg */
+  margin-bottom: 0.375rem;
+}
+
+/* Cards and containers */
+.card {
+  background: #2b2b4f; /* Dark card bg */
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Shadow from original JS */
+  padding: 2rem;
+  border: 1px solid #333; /* Border from original JS */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Modern grid and layout classes */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 0.875rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary button style */
+.btn-secondary {
+  background: #3a3a6b; /* from old secondaryButtonStyle */
+  color: white;
+  padding: 0.875rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(58, 58, 107, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58, 58, 107, 0.3);
+  background: #4a4a8b; /* slightly lighter */
+}
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+
+/* Result text styles */
+.result-success {
+  color: #6be46b; /* Green from original JS */
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.result-danger {
+  color: #ff4d4d; /* Red from original JS */
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
